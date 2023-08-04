@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.qbra.sanatkitabi.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepageFragment_to_addArtFragment"
+            app:destination="@id/addArtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addArtFragment"
+        android:name="com.qbra.sanatkitabi.AddArtFragment"
+        android:label="fragment_add_art"
+        tools:layout="@layout/fragment_add_art" >
+        <action
+            android:id="@+id/action_addArtFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+        <argument
+            android:name="artId"
+            app:argType="integer"
+            android:defaultValue="0">
+        </argument>
+    </fragment>
+</navigation>
